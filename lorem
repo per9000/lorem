@@ -3,13 +3,13 @@
 
 shortname = "lorem"
 program = "Lorem Ipsum Generator (%s)" % shortname
-version = "0.7.1"
+version = "0.7.2"
 copyright = "Copyright (C) 2007 Per Erik Strandberg"
 license = """This is free software, and you are welcome to redistribute it
 under the GNU General Public License 3+ <http://www.gnu.org/licenses/gpl.html>
 %s comes with NO WARRANTY, to the extent permitted by law.""" % shortname
 
-# Copyright 2007 Per Erik Strandberg: <per at pererikstrandberg dot se>
+# Copyright 2007 Per Erik Strandberg: <per9000 at gmail dot com>
 #
 # This program is free software you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,15 +33,16 @@ under the GNU General Public License 3+ <http://www.gnu.org/licenses/gpl.html>
 #  * The EMACS spook function
 
 from argparse import ArgumentParser
+from random import shuffle, choice
 
-
-def get_quote(source="cicero"):
+def get_quote(source=None, idx=None):
     """
+    Get a quote
     """
     if source in ['cicero', 'lorem']:
         # http://en.wikisource.org/wiki/Lorem_ipsum
         # De finibus bonorum et malorum, by Marcus Tullius Cicero, 45 BCE
-        return """Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. ..."""
+        return """Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui."""
 
     if source in ['boccaccio', 'decameron', 'decamerone']:
         # http://it.wikisource.org/wiki/Decameron/1a_giornata/Novella_Prima
@@ -59,16 +60,16 @@ Manifesta cosa è che, sì come le cose temporali tutte sono transitorie e morta
 Die früh sich einst dem trüben Blick gezeigt.
 Versuch’ ich wohl euch diesmal fest zu halten?
 Fühl’ ich mein Herz noch jenem Wahn geneigt?
-Ihr drängt euch zu! nun gut, so mögt ihr walten,
-Wie ihr aus Dunst und Nebel um mich steigt;
-Mein Busen fühlt sich jugendlich erschüttert
+Ihr drängt euch zu! nun gut, so mögt ihr walten.
+Wie ihr aus Dunst und Nebel um mich steigt.
+Mein Busen fühlt sich jugendlich erschüttert.
 Vom Zauberhauch der euren Zug umwittert.
 
-Ihr bringt mit euch die Bilder froher Tage,
-Und manche liebe Schatten steigen auf;
-Gleich einer alten, halbverklungnen Sage,
-Kommt erste Lieb’ und Freundschaft mit herauf;
-Der Schmerz wird neu, es wiederholt die Klage
+Ihr bringt mit euch die Bilder froher Tage.
+Und manche liebe Schatten steigen auf
+Gleich einer alten, halbverklungnen Sage.
+Kommt erste Lieb’ und Freundschaft mit herauf
+Der Schmerz wird neu, es wiederholt die Klage.
 Des Lebens labyrinthisch irren Lauf,
 Und nennt die Guten, die, um schöne Stunden
 Vom Glück getäuscht, vor mir hinweggeschwunden.
@@ -80,22 +81,22 @@ Vom Glück getäuscht, vor mir hinweggeschwunden.
         return """Lorsque, par un décret des puissances suprêmes,
 Le Poète apparaît en ce monde ennuyé,
 Sa mère épouvantée et pleine de blasphèmes
-Crispe ses poings vers Dieu qui la prend en pitié:
+Crispe ses poings vers Dieu qui la prend en pitié.
 
-— "Ah! que n’ai-je mis bas tout un nœud de vipères,
+—Ah! Que n’ai-je mis bas tout un nœud de vipères,
 Plutôt que de nourrir cette dérision!
 Maudite soit la nuit aux plaisirs éphémères
 Où mon ventre a conçu mon expiation!
 
 Puisque tu m’as choisie entre toutes les femmes
-Pour être le dégoût de mon triste mari,
+Pour être le dégoût de mon triste mari.
 Et que je ne puis pas rejeter dans les flammes,
-Comme un billet d’amour, ce monstre rabougri,
+Comme un billet d’amour, ce monstre rabougri.
 
 Je ferai rejaillir ta haine qui m’accable
 Sur l’instrument maudit de tes méchancetés,
 Et je tordrai si bien cet arbre misérable
-Qu’il ne pourra pousser ses boutons empestés!\""""
+Qu’il ne pourra pousser ses boutons empestés!"""
 
     if source in ['strindberg', 'hemsöborna', 'hemsoborna']:
         # http://runeberg.org/strindbg/hemsobor/
@@ -108,9 +109,15 @@ Och på tullbryggan stodo lotsar och vaktmästare och grinade åt manövern, nä
 
 Carlsson var en liten fyrkantig värmländing med blå ögon och näsa krokig som en syskonhake. Livlig, lekfull och nyfiken var han, men sjöaffärerna förstod han inte alls, och han var också kallad ut till Hemsö för att ta hand om åker och kreatur, som ingen annan ville ta befattning med, sedan gubben Flod gått ur livet och änkan satt ensam vid gården.
 
-Men när Carlsson nu ville börja pumpa flickorna om ställningar och förhållanden, så fick han riktiga skärkarlssvar:
+Men när Carlsson nu ville börja pumpa flickorna om ställningar och förhållanden, så fick han riktiga skärkarlssvar.
 
 -Ja si, det vet jag inte! Ja si, det kan jag inte säga! Ja si, det vet jag rakt inte."""
+
+    if source in ['strandberg', 'foo']:
+        # I made this up - hereby donated to the public domain
+        # Foo Bar Baz, by Per Erik Strandberg, 2014
+        return """Foo. Foo hoo? Foo bar. Foo bar, baz. Baz? Foo bar, baz."""
+
 
     return """Asset csystems BATF Blowpipe Soviet South Africa wire transfer.
 NSA event security Compsec spies benelux Sears Tower airframe red noise.
@@ -190,6 +197,9 @@ def parse_args(args=None):
     qgroup.add_argument('--spook', '--emacs', dest='source',
                         action='store_const', const='spook',
                         help='"Asset csystems BATF Blowpipe Soviet..."')
+    qgroup.add_argument('--strandberg', '--foo', dest='source',
+                        action='store_const', const='strandberg',
+                        help='"Foo. Foo hoo? Foo bar. Foo bar, baz..."')
     qgroup.add_argument('-q', '--quote', action='store', type=int, metavar='Q',
                         help='select source by index instead, q = 1, 2, ...')
 
@@ -201,7 +211,7 @@ def parse_args(args=None):
                         const='upper', default=None,
                         help='all upper case (default false)')
     sgroup.add_argument('--randomize', action='store_true',
-                        help='randomize sentences (defult false)')
+                        help='randomize order (default false)')
 
     if args:
         opt = parser.parse_args(args)
@@ -215,8 +225,71 @@ def check_args(parser, opt):
     """
     Raise parser.error if needed or not.
     """
+    if not opt.chars and not opt.words and not opt.lines and not opt.sentences:
+        opt.word = 5
+
+    for arg in [opt.chars, opt.words, opt.lines, opt.sentences]:
+        if arg is not None and arg < 0:
+            parser.error("Only positive values are allowed.")
+
+    if sum([bool(arg) for arg in [opt.chars, opt.words, opt.lines,
+                                  opt.sentences]]) > 1:
+        parser.error("Use only one of chars, words, lines or sentences.")
+
+    print opt
+    print ""
+
     # TODO: implement me
-    pass
+    return
+
+
+def randomize(lorem):
+    """
+    Randomize the order of the lorem.
+    """
+    # TODO: what about new lines?
+    words = lorem.split(' ')
+    shuffle(words)
+    words[0] = words[0][0].upper() + words[0][1:]
+    return ' '.join(words)
+
+def do_case(lorem, case):
+    """
+    Set upper or lower case, or do nothing
+    """
+    if case == 'upper':
+        return lorem.upper()
+    elif case == 'lower':
+        return lorem.lower()
+    return lorem
+
+
+def get_sentences(lorem, n):
+    """
+    Get the number of sentences
+    """
+    lorem = lorem.replace('\n', '')
+    lorem = lorem.replace('  ', '')
+
+    m = 0
+    seps = ['.', ';', '!', '?']
+    for sep in seps:
+        lorem = lorem.replace(sep, '|')
+    sentences = lorem.split('|')[:-1]
+
+    output = list()
+    while (m < n) and ((n-m) > len(sentences)):
+        output += sentences
+        m += len(sentences)
+
+    output += sentences[0:n-m]
+
+    lorem = ""
+    for sentence in output:
+        sentence = sentence.strip()
+        lorem += sentence[0].upper() + sentence[1:] + choice(seps) + " "
+    lorem = lorem.rstrip()
+    return lorem
 
 
 def do_lorem(opt):
@@ -224,8 +297,14 @@ def do_lorem(opt):
     Get the lorem and apply the arguments
     """
     lorem = get_quote(opt.source)
+    if opt.randomize:
+        lorem = randomize(lorem)
+
+    if opt.sentences:
+        lorem = get_sentences(lorem, opt.sentences)
+
     # TODO: implement me
-    print lorem[0:60]
+    return do_case(lorem, opt.case)
 
 
 if __name__ == '__main__':
@@ -238,4 +317,4 @@ if __name__ == '__main__':
         # prevent white space elimination
         print opt.version
     else:
-        do_lorem(opt)
+        print do_lorem(opt)
