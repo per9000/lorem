@@ -7,9 +7,39 @@
 testcases=0
 broken=0
 
+action="lorem -n 2"
+if [ "`$action`" != "Lorem ipsum" ]
+then
+    echo BROKEN: $action
+    broken=$((broken+1))
+else
+    echo OK: $action
+fi
+testcases=$((testcases+1))
+
+action="lorem -n 2 --lower"
+if [ "`$action`" != "lorem ipsum" ]
+then
+    echo BROKEN: $action
+    broken=$((broken+1))
+else
+    echo OK: $action
+fi
+testcases=$((testcases+1))
+
+action="lorem -n 2 --upper"
+if [ "`$action`" != "LOREM IPSUM" ]
+then
+    echo BROKEN: $action
+    broken=$((broken+1))
+else
+    echo OK: $action
+fi
+testcases=$((testcases+1))
+
 for random in "" "--randomize"
 do
-    for lorem in lorem decameron faust fleurs spook strandberg
+    for lorem in lorem decameron faust fleurs spook strindberg strandberg
     do
         for n in 0 1 2 3 100 100000
         do
@@ -49,6 +79,8 @@ do
             then
                 n=1
             fi
+            testcases=$((testcases+1))
+
             if [ `$action | wc -l` -ne $n ]
             then
                 echo BROKEN: $action
