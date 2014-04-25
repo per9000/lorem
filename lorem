@@ -274,8 +274,9 @@ def parse_args(arguments=None):
 
 def check_args(parser, opt):
     """Raise parser.error if needed or not."""
-    if not opt.chars and not opt.words and not opt.lines and not opt.sentences:
-        opt.word = 5
+    if opt.chars is None and opt.words is None and opt.lines is None and \
+            opt.sentences is None:
+        opt.words = 5
 
     for arg in [opt.chars, opt.words, opt.lines, opt.sentences]:
         if arg is not None and arg < 0:

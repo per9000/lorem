@@ -7,6 +7,16 @@
 testcases=0
 broken=0
 
+action="lorem"
+if [ "`$action`" != "Lorem ipsum dolor sit amet," ]
+then
+    echo BROKEN: $action
+    broken=$((broken+1))
+else
+    echo OK: $action
+fi
+testcases=$((testcases+1))
+
 action="lorem -n 2"
 if [ "`$action`" != "Lorem ipsum" ]
 then
