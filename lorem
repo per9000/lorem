@@ -5,17 +5,14 @@
 A lorem ipsum generator for the terminal.
 
 Run lorem -h for more details.
+
+Download and read more at
+ * https://github.com/per9000
+ * http://www.pererikstrandberg.se/blog/index.cgi?page=LoremIpsumGenerator
+
 """
 
-SHORTNAME = "lorem"
-PROGRAM = "Lorem Ipsum Generator (%s)" % SHORTNAME
-VERSION = "0.7.3"
-COPYR = "Copyright (C) 2014 Per Erik Strandberg"
-GPLV3 = """This is free software, and you are welcome to redistribute it
-under the GNU General Public License 3+ <http://www.gnu.org/licenses/gpl.html>
-%s comes with NO WARRANTY, to the extent permitted by law.""" % SHORTNAME
-
-# Copyright 2007 Per Erik Strandberg: <per9000 at gmail dot com>
+# Copyright 2014 Per Erik Strandberg: <per9000 at gmail dot com>
 #
 # This program is free software you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -40,6 +37,14 @@ under the GNU General Public License 3+ <http://www.gnu.org/licenses/gpl.html>
 
 from argparse import ArgumentParser
 from random import shuffle, choice
+
+SHORTNAME = "lorem"
+PROGRAM = "Lorem Ipsum Generator (%s)" % SHORTNAME
+VERSION = "0.7.3"
+COPYR = "Copyright (C) 2014 Per Erik Strandberg"
+GPLV3 = """This is free software, and you are welcome to redistribute it
+under the GNU General Public License 3+ <http://www.gnu.org/licenses/gpl.html>
+%s comes with NO WARRANTY, to the extent permitted by law.""" % SHORTNAME
 
 
 def get_quote(source=None, idx=None):
@@ -410,7 +415,6 @@ if __name__ == '__main__':
         res = doctest.testmod()
         print "Tested %s cases, %s failed." % (res.attempted, res.failed)
     elif my_args.version:
-        # prevent white space elimination
         print my_args.version
     else:
         print do_lorem(my_args)
