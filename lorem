@@ -3,9 +3,9 @@
 
 shortname = "lorem"
 program = "Lorem Ipsum Generator (%s)" % shortname
-version = "0.7.2"
+version = "0.7.3"
 copyright = "Copyright (C) 2007 Per Erik Strandberg"
-license = """This is free software, and you are welcome to redistribute it
+lic = """This is free software, and you are welcome to redistribute it
 under the GNU General Public License 3+ <http://www.gnu.org/licenses/gpl.html>
 %s comes with NO WARRANTY, to the extent permitted by law.""" % shortname
 
@@ -35,10 +35,9 @@ under the GNU General Public License 3+ <http://www.gnu.org/licenses/gpl.html>
 from argparse import ArgumentParser
 from random import shuffle, choice
 
+
 def get_quote(source=None, idx=None):
-    """
-    Get a quote
-    """
+    """Get a quote"""
     if source in ['cicero', 'lorem']:
         # http://en.wikisource.org/wiki/Lorem_ipsum
         # De finibus bonorum et malorum, by Marcus Tullius Cicero, 45 BCE
@@ -118,7 +117,6 @@ Men när Carlsson nu ville börja pumpa flickorna om ställningar och förhålla
         # Foo Bar Baz, by Per Erik Strandberg, 2014
         return """Foo. Foo hoo? Foo bar. Foo bar, baz. Baz? Foo bar, baz."""
 
-
     return """Asset csystems BATF Blowpipe Soviet South Africa wire transfer.
 NSA event security Compsec spies benelux Sears Tower airframe red noise.
 
@@ -145,19 +143,18 @@ Nuclear PLO basement MILSATCOM genetic 9/11 PET Crypto AG.
 
 Freeh Bellcore unclassified. Hello to all my friends and fans in
 domestic surveillance. Saudi Arabia Panama secure EuroFed MP5K-SD Bush.
-Wired Marxist pre-emptive FBI Europol embassy.
-"""
+Wired Marxist pre-emptive FBI Europol embassy."""
 
 
 def parse_args(args=None):
     """
     Parse command line argumets, or the given string
-    >>> opt = parse_opt(['-n', '3'])
-    >>> opt.n == 3
-    True
+        >>> opt = parse_args(['-n', '3'])
+        >>> opt.words == 3
+        True
     """
     desc = "%s - Create more or less random lorem ipsum text." % shortname
-    vinfo = "%s version %s\n%s\n%s" % (program, version, copyright, license)
+    vinfo = "%s version %s\n\n%s\n\n%s" % (program, version, copyright, lic)
 
     parser = ArgumentParser(description=desc)
     parser.add_argument('-v', '--version', action='store_const',
@@ -222,41 +219,35 @@ def parse_args(args=None):
 
 
 def check_args(parser, opt):
-    """
-    Raise parser.error if needed or not.
-    """
+    """Raise parser.error if needed or not."""
     if not opt.chars and not opt.words and not opt.lines and not opt.sentences:
         opt.word = 5
 
     for arg in [opt.chars, opt.words, opt.lines, opt.sentences]:
         if arg is not None and arg < 0:
-            parser.error("Only positive values are allowed.")
+            parser.error("Only non-negative values are allowed.")
 
-    if sum([bool(arg) for arg in [opt.chars, opt.words, opt.lines,
-                                  opt.sentences]]) > 1:
+    if sum([bool(arg is not None) for arg in [opt.chars, opt.words, opt.lines,
+                                              opt.sentences]]) > 1:
         parser.error("Use only one of chars, words, lines or sentences.")
 
-    print opt
-    print ""
+    #print opt
+    #print ""
 
     # TODO: implement me
     return
 
 
 def randomize(lorem):
-    """
-    Randomize the order of the lorem.
-    """
-    # TODO: what about new lines?
+    """Randomize the order of the lorem."""
     words = lorem.split(' ')
     shuffle(words)
     words[0] = words[0][0].upper() + words[0][1:]
     return ' '.join(words)
 
+
 def do_case(lorem, case):
-    """
-    Set upper or lower case, or do nothing
-    """
+    """Set upper or lower case, or do nothing"""
     if case == 'upper':
         return lorem.upper()
     elif case == 'lower':
@@ -264,12 +255,17 @@ def do_case(lorem, case):
     return lorem
 
 
+def no_linebreaks(lorem):
+    """Remove the new line chars."""
+    lorem = lorem.replace('\n', ' ')
+    lorem = lorem.replace('  ', ' ')
+    lorem = lorem.replace('  ', ' ')
+    return lorem
+
+
 def get_sentences(lorem, n):
-    """
-    Get the number of sentences
-    """
-    lorem = lorem.replace('\n', '')
-    lorem = lorem.replace('  ', '')
+    """Get n sentences"""
+    lorem = no_linebreaks(lorem)
 
     m = 0
     seps = ['.', ';', '!', '?']
@@ -292,16 +288,67 @@ def get_sentences(lorem, n):
     return lorem
 
 
+def get_lines(lorem, n):
+    """Get n lines"""
+
+    lorem = lorem.replace('\n\n', '\n')
+    lines = lorem.split('\n')
+    m = 0
+
+    output = list()
+    while (m < n) and ((n-m) > len(lines)):
+        output += lines
+        m += len(lines)
+
+    output += lines[0:n-m]
+
+    lorem = '\n'.join(output).rstrip()
+    return lorem
+
+
+def get_words(lorem, n):
+    """Get n words"""
+    lorem = no_linebreaks(lorem).rstrip()
+    words = lorem.split(' ')
+    m = 0
+    output = list()
+
+    while (m < n) and ((n-m) > len(words)):
+        output += words
+        m += len(words)
+
+    output += words[0:n-m]
+    return ' '.join(output)
+
+
+def get_chars(lorem, n):
+    """Get n chars."""
+    lorem = no_linebreaks(lorem).rstrip() + ' '
+    m = 0
+    output = ''
+
+    while (m < n) and ((n-m) > len(lorem)):
+        output += lorem
+        m += len(lorem)
+
+    output += lorem[0:n-m]
+    return output
+
+
 def do_lorem(opt):
-    """
-    Get the lorem and apply the arguments
-    """
+    """Get the lorem and apply the arguments"""
     lorem = get_quote(opt.source)
     if opt.randomize:
         lorem = randomize(lorem)
 
-    if opt.sentences:
+    if opt.sentences is not None:
         lorem = get_sentences(lorem, opt.sentences)
+    elif opt.chars is not None:
+        lorem = get_chars(lorem, opt.chars)
+    elif opt.words is not None:
+        lorem = get_words(lorem, opt.words)
+    elif opt.lines is not None:
+        lorem = get_lines(lorem, opt.lines)
 
     # TODO: implement me
     return do_case(lorem, opt.case)
