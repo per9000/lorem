@@ -125,6 +125,46 @@ Men när Carlsson nu ville börja pumpa flickorna om ställningar och förhålla
 -Ja si, det vet jag inte! Ja si, det kan jag inte säga! Ja si, det vet jag rakt inte."""
 
     i += 1
+    if source in ['poe', 'raven'] or idx == i:
+        # http://en.wikisource.org/wiki/The_Raven_and_Other_Poems/The_Raven
+        # The Raven by Edgar Allan Poe, 1845
+        return \
+            """Once upon a midnight dreary, while I pondered, weak and weary,
+Over many a quaint and curious volume of forgotten lore,
+While I nodded, nearly napping, suddenly there came a tapping,
+As of some one gently rapping, rapping at my chamber door.
+'Tis some visiter, I muttered, tapping at my chamber door.
+Only this, and nothing more."
+
+Ah, distinctly I remember it was in the bleak December,
+And each separate dying ember wrought its ghost upon the floor.
+Eagerly I wished the morrow;—vainly I had sought to borrow
+From my books surcease of sorrow—sorrow for the lost Lenore.
+For the rare and radiant maiden whom the angels name Lenore.
+Nameless here for evermore.
+
+And the silken sad uncertain rustling of each purple curtain
+Thrilled me, filled me with fantastic terrors never felt before;
+So that now, to still the beating of my heart, I stood repeating
+Tis some visiter entreating entrance at my chamber door.
+Some late visiter entreating entrance at my chamber door.
+This it is, and nothing more.
+
+Presently my soul grew stronger; hesitating then no longer,
+Sir, said I, or Madam, truly your forgiveness I implore.
+But the fact is I was napping, and so gently you came rapping,
+And so faintly you came tapping, tapping at my chamber door,
+That I scarce was sure I heard you, here I opened wide the door.
+Darkness there, and nothing more.
+
+Deep into that darkness peering, long I stood there wondering, fearing,
+Doubting, dreaming dreams no mortal ever dared to dream before;
+But the silence was unbroken, and the darkness gave no token,
+And the only word there spoken was the whispered word, Lenore!
+This I whispered, and an echo murmured back the word, Lenore!
+Merely this, and nothing more."""
+
+    i += 1
     if source in ['strandberg', 'foo'] or idx == i:
         # I made this up - hereby donated to the public domain
         # Foo Bar Baz, by Per Erik Strandberg, 2014
@@ -205,6 +245,9 @@ def parse_args(arguments=None):
     qgroup.add_argument('--spook', '--emacs', dest='source',
                         action='store_const', const='spook',
                         help='"Asset csystems BATF Blowpipe Soviet..."')
+    qgroup.add_argument('--poe', '--raven', dest='source',
+                        action='store_const', const='raven',
+                        help='"Once upon a midnight dreary, while I pondered, weak and weary,..."')
     qgroup.add_argument('--strandberg', '--foo', dest='source',
                         action='store_const', const='strandberg',
                         help='"Foo. Foo hoo? Foo bar. Foo bar, baz..."')
