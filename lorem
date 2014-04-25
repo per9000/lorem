@@ -1,13 +1,19 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-shortname = "lorem"
-program = "Lorem Ipsum Generator (%s)" % shortname
-version = "0.7.3"
-copyright = "Copyright (C) 2007 Per Erik Strandberg"
-lic = """This is free software, and you are welcome to redistribute it
+"""
+A lorem ipsum generator for the terminal.
+
+Run lorem -h for more details.
+"""
+
+SHORTNAME = "lorem"
+PROGRAM = "Lorem Ipsum Generator (%s)" % SHORTNAME
+VERSION = "0.7.3"
+COPYR = "Copyright (C) 2007 Per Erik Strandberg"
+GPLV3 = """This is free software, and you are welcome to redistribute it
 under the GNU General Public License 3+ <http://www.gnu.org/licenses/gpl.html>
-%s comes with NO WARRANTY, to the extent permitted by law.""" % shortname
+%s comes with NO WARRANTY, to the extent permitted by law.""" % SHORTNAME
 
 # Copyright 2007 Per Erik Strandberg: <per9000 at gmail dot com>
 #
@@ -38,12 +44,15 @@ from random import shuffle, choice
 
 def get_quote(source=None, idx=None):
     """Get a quote"""
-    if source in ['cicero', 'lorem']:
+    i = 0
+
+    if source in ['cicero', 'lorem'] or idx == i:
         # http://en.wikisource.org/wiki/Lorem_ipsum
         # De finibus bonorum et malorum, by Marcus Tullius Cicero, 45 BCE
         return """Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui."""
 
-    if source in ['boccaccio', 'decameron', 'decamerone']:
+    i += 1
+    if source in ['boccaccio', 'decameron', 'decamerone'] or idx == i:
         # http://it.wikisource.org/wiki/Decameron/1a_giornata/Novella_Prima
         # The Decameron, by Giovanni Boccaccio, 1340-1350
         return """Ser Cepperello con una falsa confessione inganna uno santo frate, e muorsi; ed essendo stato un pessimo uomo in vita, è morto reputato per santo e chiamato san Ciappelletto.
@@ -52,7 +61,8 @@ Convenevole cosa è, carissime donne, che ciascheduna cosa la quale l’uomo fa,
 
 Manifesta cosa è che, sì come le cose temporali tutte sono transitorie e mortali, così in sé e fuor di sé essere piene di noia e d’angoscia e di fatica e ad infiniti pericoli soggiacere; alle quali senza niuno fallo né potremmo noi, che viviamo mescolati in esse e che siamo parte d’esse, durare né ripararci, se spezial grazia di Dio forza e avvedimento non ci prestasse. La quale a noi e in noi non è da credere che per alcuno nostro merito discenda, ma dalla sua propia benignità mossa e da prieghi di coloro impetrata che, sì come noi siamo, furon mortali, e bene i suoi piaceri mentre furono in vita seguendo, ora con lui etterni sono divenuti e beati; alli quali noi medesimi, sì come a procuratori informati per esperienza della nostra fragilità, forse non audaci di porgere i prieghi nostri nel cospetto di tanto giudice, delle cose le quali a noi reputiamo opportune gli porgiamo."""
 
-    if source in ['goethe', 'faust']:
+    i += 1
+    if source in ['goethe', 'faust'] or idx == i:
         # Faust - Der Tragödie erster Teil, by Johann Wolfgang von Goethe, 1808
         # http://de.wikisource.org/wiki/Faust_-_Der_Trag%C3%B6die_erster_Teil
         return """Ihr naht euch wieder, schwankende Gestalten!
@@ -74,7 +84,8 @@ Und nennt die Guten, die, um schöne Stunden
 Vom Glück getäuscht, vor mir hinweggeschwunden.
 """
 
-    if source in ['beaudelaire', 'flowers', 'fleurs']:
+    i += 1
+    if source in ['beaudelaire', 'flowers', 'fleurs'] or idx == i:
         # http://fr.wikisource.org/wiki/Les_Fleurs_du_mal/1857
         # Les Fleurs du mal, by Charles Baudelaire, 1857
         return """Lorsque, par un décret des puissances suprêmes,
@@ -97,7 +108,8 @@ Sur l’instrument maudit de tes méchancetés,
 Et je tordrai si bien cet arbre misérable
 Qu’il ne pourra pousser ses boutons empestés!"""
 
-    if source in ['strindberg', 'hemsöborna', 'hemsoborna']:
+    i += 1
+    if source in ['strindberg', 'hemsöborna', 'hemsoborna'] or idx == i:
         # http://runeberg.org/strindbg/hemsobor/
         # Hemsöborna by August Strindberg, 1914
         return """Han kom som ett yrväder en aprilafton och hade ett höganäskrus i en svångrem om halsen. Clara och Lotten voro inne med sköt-ekan att hämta honom på Dalarö brygga; men det dröjde evigheter, innan de kommo i båt. De skulle till handelsman och ha en tunna tjära och på abeteket och hämta gråsalva åt grisen, och så skulle de på posten och få ett frimärke, och så skulle de ner till Fia Lövström i Kroken och låna tuppen mot ett halvpund småtärna till notbygget, och sist hade de hamnat på gästgivaregården, där Carlsson bjudit på kaffe med dopp. Och så kommo de äntligen i båt, men Carlsson ville styra, och det kunde han inte, för han hade aldrig sett en råseglare förr, och därför skrek han, att de skulle hissa focken, som inte fanns.
@@ -112,7 +124,8 @@ Men när Carlsson nu ville börja pumpa flickorna om ställningar och förhålla
 
 -Ja si, det vet jag inte! Ja si, det kan jag inte säga! Ja si, det vet jag rakt inte."""
 
-    if source in ['strandberg', 'foo']:
+    i += 1
+    if source in ['strandberg', 'foo'] or idx == i:
         # I made this up - hereby donated to the public domain
         # Foo Bar Baz, by Per Erik Strandberg, 2014
         return """Foo. Foo hoo? Foo bar. Foo bar, baz. Baz? Foo bar, baz."""
@@ -146,15 +159,15 @@ domestic surveillance. Saudi Arabia Panama secure EuroFed MP5K-SD Bush.
 Wired Marxist pre-emptive FBI Europol embassy."""
 
 
-def parse_args(args=None):
+def parse_args(arguments=None):
     """
     Parse command line argumets, or the given string
         >>> opt = parse_args(['-n', '3'])
         >>> opt.words == 3
         True
     """
-    desc = "%s - Create more or less random lorem ipsum text." % shortname
-    vinfo = "%s version %s\n\n%s\n\n%s" % (program, version, copyright, lic)
+    desc = "%s - Create more or less random lorem ipsum text." % SHORTNAME
+    vinfo = "%s version %s\n\n%s\n\n%s" % (PROGRAM, VERSION, COPYR, GPLV3)
 
     parser = ArgumentParser(description=desc)
     parser.add_argument('-v', '--version', action='store_const',
@@ -210,8 +223,8 @@ def parse_args(args=None):
     sgroup.add_argument('--randomize', action='store_true',
                         help='randomize order (default false)')
 
-    if args:
-        opt = parser.parse_args(args)
+    if arguments:
+        opt = parser.parse_args(arguments)
     else:
         opt = parser.parse_args()
     check_args(parser, opt)
@@ -230,11 +243,6 @@ def check_args(parser, opt):
     if sum([bool(arg is not None) for arg in [opt.chars, opt.words, opt.lines,
                                               opt.sentences]]) > 1:
         parser.error("Use only one of chars, words, lines or sentences.")
-
-    #print opt
-    #print ""
-
-    # TODO: implement me
     return
 
 
@@ -350,18 +358,17 @@ def do_lorem(opt):
     elif opt.lines is not None:
         lorem = get_lines(lorem, opt.lines)
 
-    # TODO: implement me
     return do_case(lorem, opt.case)
 
 
 if __name__ == '__main__':
-    opt = parse_args()
-    if opt.t:
+    my_args = parse_args()
+    if my_args.t:
         import doctest
         res = doctest.testmod()
         print "Tested %s cases, %s failed." % (res.attempted, res.failed)
-    elif opt.version:
+    elif my_args.version:
         # prevent white space elimination
-        print opt.version
+        print my_args.version
     else:
-        print do_lorem(opt)
+        print do_lorem(my_args)
