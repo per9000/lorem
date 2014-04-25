@@ -10,7 +10,7 @@ Run lorem -h for more details.
 SHORTNAME = "lorem"
 PROGRAM = "Lorem Ipsum Generator (%s)" % SHORTNAME
 VERSION = "0.7.3"
-COPYR = "Copyright (C) 2007 Per Erik Strandberg"
+COPYR = "Copyright (C) 2014 Per Erik Strandberg"
 GPLV3 = """This is free software, and you are welcome to redistribute it
 under the GNU General Public License 3+ <http://www.gnu.org/licenses/gpl.html>
 %s comes with NO WARRANTY, to the extent permitted by law.""" % SHORTNAME
@@ -175,8 +175,6 @@ def parse_args(arguments=None):
                         const=vinfo)
     parser.add_argument('-t', action='store_true',
                         help='run self-tests and exit')
-    parser.add_argument('-d', '--debug', action='store_true',
-                        help='enable debugging output')
 
     ogroup = parser.add_argument_group('output format (mutually exclusive)')
     ogroup.add_argument('--words', '-n', action='store', type=int, metavar='N',
