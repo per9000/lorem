@@ -54,120 +54,155 @@ def get_quote(source=None, idx=None):
     if source in ['cicero', 'lorem'] or idx == i:
         # http://en.wikisource.org/wiki/Lorem_ipsum
         # De finibus bonorum et malorum, by Marcus Tullius Cicero, 45 BCE
-        return """Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui."""
+        return """Lorem ipsum dolor sit amet, consectetuer adipiscing
+        elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis natoque penatibus et magnis dis parturient montes,
+        nascetur ridiculus mus. Donec quam felis, ultricies nec,
+        pellentesque eu, pretium quis, sem. Nulla consequat massa quis
+        enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
+        eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis
+        vitae, justo. Nullam dictum felis eu pede mollis
+        pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+        semper nisi. Aenean vulputate eleifend tellus. Aenean leo
+        ligula, porttitor eu, consequat vitae, eleifend ac,
+        enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+        tellus. Phasellus viverra nulla ut metus varius
+        laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies
+        nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget
+        dui."""
 
     i += 1
     if source in ['boccaccio', 'decameron', 'decamerone'] or idx == i:
         # http://it.wikisource.org/wiki/Decameron/1a_giornata/Novella_Prima
         # The Decameron, by Giovanni Boccaccio, 1340-1350
-        return """Ser Cepperello con una falsa confessione inganna uno santo frate, e muorsi; ed essendo stato un pessimo uomo in vita, è morto reputato per santo e chiamato san Ciappelletto.
-
-Convenevole cosa è, carissime donne, che ciascheduna cosa la quale l’uomo fa, dallo ammirabile e santo nome di Colui il quale di tutte fu facitore le dea principio. Per che, dovendo io al nostro novellare, sì come primo, dare cominciamento, intendo da una delle sue maravigliose cose incominciare, acciò che, quella udita, la nostra speranza in lui, sì come in cosa impermutabile, si fermi e sempre sia da noi il suo nome lodato.
-
-Manifesta cosa è che, sì come le cose temporali tutte sono transitorie e mortali, così in sé e fuor di sé essere piene di noia e d’angoscia e di fatica e ad infiniti pericoli soggiacere; alle quali senza niuno fallo né potremmo noi, che viviamo mescolati in esse e che siamo parte d’esse, durare né ripararci, se spezial grazia di Dio forza e avvedimento non ci prestasse. La quale a noi e in noi non è da credere che per alcuno nostro merito discenda, ma dalla sua propia benignità mossa e da prieghi di coloro impetrata che, sì come noi siamo, furon mortali, e bene i suoi piaceri mentre furono in vita seguendo, ora con lui etterni sono divenuti e beati; alli quali noi medesimi, sì come a procuratori informati per esperienza della nostra fragilità, forse non audaci di porgere i prieghi nostri nel cospetto di tanto giudice, delle cose le quali a noi reputiamo opportune gli porgiamo."""
+        return """Ser Cepperello con una falsa confessione inganna uno
+        santo frate, e muorsi; ed essendo stato un pessimo uomo in
+        vita, è morto reputato per santo e chiamato san Ciappelletto.
+        Convenevole cosa è, carissime donne, che ciascheduna cosa la
+        quale l’uomo fa, dallo ammirabile e santo nome di Colui il
+        quale di tutte fu facitore le dea principio. Per che, dovendo
+        io al nostro novellare, sì come primo, dare cominciamento,
+        intendo da una delle sue maravigliose cose incominciare, acciò
+        che, quella udita, la nostra speranza in lui, sì come in cosa
+        impermutabile, si fermi e sempre sia da noi il suo nome
+        lodato.  Manifesta cosa è che, sì come le cose temporali tutte
+        sono transitorie e mortali, così in sé e fuor di sé essere
+        piene di noia e d’angoscia e di fatica e ad infiniti pericoli
+        soggiacere; alle quali senza niuno fallo né potremmo noi, che
+        viviamo mescolati in esse e che siamo parte d’esse, durare né
+        ripararci, se spezial grazia di Dio forza e avvedimento non ci
+        prestasse. La quale a noi e in noi non è da credere che per
+        alcuno nostro merito discenda, ma dalla sua propia benignità
+        mossa e da prieghi di coloro impetrata che, sì come noi siamo,
+        furon mortali, e bene i suoi piaceri mentre furono in vita
+        seguendo, ora con lui etterni sono divenuti e beati; alli
+        quali noi medesimi, sì come a procuratori informati per
+        esperienza della nostra fragilità, forse non audaci di porgere
+        i prieghi nostri nel cospetto di tanto giudice, delle cose le
+        quali a noi reputiamo opportune gli porgiamo."""
 
     i += 1
     if source in ['goethe', 'faust'] or idx == i:
         # Faust - Der Tragödie erster Teil, by Johann Wolfgang von Goethe, 1808
         # http://de.wikisource.org/wiki/Faust_-_Der_Trag%C3%B6die_erster_Teil
-        return """Ihr naht euch wieder, schwankende Gestalten!
-Die früh sich einst dem trüben Blick gezeigt.
-Versuch’ ich wohl euch diesmal fest zu halten?
-Fühl’ ich mein Herz noch jenem Wahn geneigt?
-Ihr drängt euch zu! nun gut, so mögt ihr walten.
-Wie ihr aus Dunst und Nebel um mich steigt.
-Mein Busen fühlt sich jugendlich erschüttert.
-Vom Zauberhauch der euren Zug umwittert.
-
-Ihr bringt mit euch die Bilder froher Tage.
-Und manche liebe Schatten steigen auf
-Gleich einer alten, halbverklungnen Sage.
-Kommt erste Lieb’ und Freundschaft mit herauf
-Der Schmerz wird neu, es wiederholt die Klage.
-Des Lebens labyrinthisch irren Lauf,
-Und nennt die Guten, die, um schöne Stunden
-Vom Glück getäuscht, vor mir hinweggeschwunden.
-"""
+        return """Ihr naht euch wieder, schwankende Gestalten!  Die
+        früh sich einst dem trüben Blick gezeigt. Versuch’ ich wohl
+        euch diesmal fest zu halten? Fühl’ ich mein Herz noch jenem
+        Wahn geneigt? Ihr drängt euch zu! nun gut, so mögt ihr
+        walten. Wie ihr aus Dunst und Nebel um mich steigt. Mein Busen
+        fühlt sich jugendlich erschüttert. Vom Zauberhauch der euren
+        Zug umwittert. Ihr bringt mit euch die Bilder froher Tage. Und
+        manche liebe Schatten steigen auf Gleich einer alten,
+        halbverklungnen Sage. Kommt erste Lieb’ und Freundschaft mit
+        herauf Der Schmerz wird neu, es wiederholt die Klage. Des
+        Lebens labyrinthisch irren Lauf, Und nennt die Guten, die, um
+        schöne Stunden Vom Glück getäuscht, vor mir
+        hinweggeschwunden."""
 
     i += 1
     if source in ['beaudelaire', 'flowers', 'fleurs'] or idx == i:
         # http://fr.wikisource.org/wiki/Les_Fleurs_du_mal/1857
         # Les Fleurs du mal, by Charles Baudelaire, 1857
-        return """Lorsque, par un décret des puissances suprêmes,
-Le Poète apparaît en ce monde ennuyé,
-Sa mère épouvantée et pleine de blasphèmes
-Crispe ses poings vers Dieu qui la prend en pitié.
-
-—Ah! Que n’ai-je mis bas tout un nœud de vipères,
-Plutôt que de nourrir cette dérision!
-Maudite soit la nuit aux plaisirs éphémères
-Où mon ventre a conçu mon expiation!
-
-Puisque tu m’as choisie entre toutes les femmes
-Pour être le dégoût de mon triste mari.
-Et que je ne puis pas rejeter dans les flammes,
-Comme un billet d’amour, ce monstre rabougri.
-
-Je ferai rejaillir ta haine qui m’accable
-Sur l’instrument maudit de tes méchancetés,
-Et je tordrai si bien cet arbre misérable
-Qu’il ne pourra pousser ses boutons empestés!"""
+        return """Lorsque, par un décret des puissances suprêmes, Le
+        Poète apparaît en ce monde ennuyé, Sa mère épouvantée et
+        pleine de blasphèmes Crispe ses poings vers Dieu qui la prend
+        en pitié.  —Ah! Que n’ai-je mis bas tout un nœud de vipères,
+        Plutôt que de nourrir cette dérision!  Maudite soit la nuit
+        aux plaisirs éphémères Où mon ventre a conçu mon expiation!
+        Puisque tu m’as choisie entre toutes les femmes Pour être le
+        dégoût de mon triste mari.  Et que je ne puis pas rejeter dans
+        les flammes, Comme un billet d’amour, ce monstre rabougri.  Je
+        ferai rejaillir ta haine qui m’accable Sur l’instrument maudit
+        de tes méchancetés, Et je tordrai si bien cet arbre misérable
+        Qu’il ne pourra pousser ses boutons empestés!"""
 
     i += 1
     if source in ['strindberg', 'hemsöborna', 'hemsoborna'] or idx == i:
         # http://runeberg.org/strindbg/hemsobor/
         # Hemsöborna by August Strindberg, 1914
-        return """Han kom som ett yrväder en aprilafton och hade ett höganäskrus i en svångrem om halsen. Clara och Lotten voro inne med sköt-ekan att hämta honom på Dalarö brygga; men det dröjde evigheter, innan de kommo i båt. De skulle till handelsman och ha en tunna tjära och på abeteket och hämta gråsalva åt grisen, och så skulle de på posten och få ett frimärke, och så skulle de ner till Fia Lövström i Kroken och låna tuppen mot ett halvpund småtärna till notbygget, och sist hade de hamnat på gästgivaregården, där Carlsson bjudit på kaffe med dopp. Och så kommo de äntligen i båt, men Carlsson ville styra, och det kunde han inte, för han hade aldrig sett en råseglare förr, och därför skrek han, att de skulle hissa focken, som inte fanns.
-
-Och på tullbryggan stodo lotsar och vaktmästare och grinade åt manövern, när ekan gick över stag och länsade ner åt Saltsäcken.
-
--Hörru, du har hål i båten! skrek en lotslärling genom vinden; -  stopp till! stopp till! och medan Carlsson tittade efter hålen, hade Clara knuffat undan honom och tagit roret, och med årorna lyckades Lotten få ekan opp i vinden igen, så att nu strök det ner åt Aspösund med god gång.
-
-Carlsson var en liten fyrkantig värmländing med blå ögon och näsa krokig som en syskonhake. Livlig, lekfull och nyfiken var han, men sjöaffärerna förstod han inte alls, och han var också kallad ut till Hemsö för att ta hand om åker och kreatur, som ingen annan ville ta befattning med, sedan gubben Flod gått ur livet och änkan satt ensam vid gården.
-
-Men när Carlsson nu ville börja pumpa flickorna om ställningar och förhållanden, så fick han riktiga skärkarlssvar.
-
--Ja si, det vet jag inte! Ja si, det kan jag inte säga! Ja si, det vet jag rakt inte."""
+        return """Han kom som ett yrväder en aprilafton och hade ett
+        höganäskrus i en svångrem om halsen. Clara och Lotten voro
+        inne med sköt-ekan att hämta honom på Dalarö brygga; men det
+        dröjde evigheter, innan de kommo i båt. De skulle till
+        handelsman och ha en tunna tjära och på abeteket och hämta
+        gråsalva åt grisen, och så skulle de på posten och få ett
+        frimärke, och så skulle de ner till Fia Lövström i Kroken och
+        låna tuppen mot ett halvpund småtärna till notbygget, och sist
+        hade de hamnat på gästgivaregården, där Carlsson bjudit på
+        kaffe med dopp. Och så kommo de äntligen i båt, men Carlsson
+        ville styra, och det kunde han inte, för han hade aldrig sett
+        en råseglare förr, och därför skrek han, att de skulle hissa
+        focken, som inte fanns. Och på tullbryggan stodo lotsar och
+        vaktmästare och grinade åt manövern, när ekan gick över stag
+        och länsade ner åt Saltsäcken. -Hörru, du har hål i båten!
+        skrek en lotslärling genom vinden; - stopp till! stopp till!
+        och medan Carlsson tittade efter hålen, hade Clara knuffat
+        undan honom och tagit roret, och med årorna lyckades Lotten få
+        ekan opp i vinden igen, så att nu strök det ner åt Aspösund
+        med god gång. Carlsson var en liten fyrkantig värmländing med
+        blå ögon och näsa krokig som en syskonhake. Livlig, lekfull
+        och nyfiken var han, men sjöaffärerna förstod han inte alls,
+        och han var också kallad ut till Hemsö för att ta hand om åker
+        och kreatur, som ingen annan ville ta befattning med, sedan
+        gubben Flod gått ur livet och änkan satt ensam vid gården. Men
+        när Carlsson nu ville börja pumpa flickorna om ställningar och
+        förhållanden, så fick han riktiga skärkarlssvar. -Ja si, det
+        vet jag inte! Ja si, det kan jag inte säga! Ja si, det vet jag
+        rakt inte."""
 
     i += 1
     if source in ['poe', 'raven'] or idx == i:
         # http://en.wikisource.org/wiki/The_Raven_and_Other_Poems/The_Raven
         # The Raven by Edgar Allan Poe, 1845
-        return \
-            """Once upon a midnight dreary, while I pondered, weak and weary,
-Over many a quaint and curious volume of forgotten lore,
-While I nodded, nearly napping, suddenly there came a tapping,
-As of some one gently rapping, rapping at my chamber door.
-'Tis some visiter, I muttered, tapping at my chamber door.
-Only this, and nothing more."
-
-Ah, distinctly I remember it was in the bleak December,
-And each separate dying ember wrought its ghost upon the floor.
-Eagerly I wished the morrow;—vainly I had sought to borrow
-From my books surcease of sorrow—sorrow for the lost Lenore.
-For the rare and radiant maiden whom the angels name Lenore.
-Nameless here for evermore.
-
-And the silken sad uncertain rustling of each purple curtain
-Thrilled me, filled me with fantastic terrors never felt before;
-So that now, to still the beating of my heart, I stood repeating
-Tis some visiter entreating entrance at my chamber door.
-Some late visiter entreating entrance at my chamber door.
-This it is, and nothing more.
-
-Presently my soul grew stronger; hesitating then no longer,
-Sir, said I, or Madam, truly your forgiveness I implore.
-But the fact is I was napping, and so gently you came rapping,
-And so faintly you came tapping, tapping at my chamber door,
-That I scarce was sure I heard you, here I opened wide the door.
-Darkness there, and nothing more.
-
-Deep into that darkness peering, long I stood there wondering, fearing,
-Doubting, dreaming dreams no mortal ever dared to dream before;
-But the silence was unbroken, and the darkness gave no token,
-And the only word there spoken was the whispered word, Lenore!
-This I whispered, and an echo murmured back the word, Lenore!
-Merely this, and nothing more."""
+        return """Once upon a midnight dreary, while I pondered, weak
+        and weary. Over many a quaint and curious volume of forgotten
+        lore.  While I nodded, nearly napping, suddenly there came a
+        tapping.  As of some one gently rapping, rapping at my chamber
+        door.  'Tis some visiter, I muttered, tapping at my chamber
+        door.  Only this, and nothing more. Ah, distinctly I remember
+        it was in the bleak December. And each separate dying ember
+        wrought its ghost upon the floor.  Eagerly I wished the
+        morrow;—vainly I had sought to borrow. From my books surcease
+        of sorrow—sorrow for the lost Lenore. For the rare and radiant
+        maiden whom the angels name Lenore. Nameless here for
+        evermore.  And the silken sad uncertain rustling of each
+        purple curtain Thrilled me, filled me with fantastic terrors
+        never felt before; So that now, to still the beating of my
+        heart, I stood repeating Tis some visiter entreating entrance
+        at my chamber door.  Some late visiter entreating entrance at
+        my chamber door.  This it is, and nothing more.  Presently my
+        soul grew stronger; hesitating then no longer.  Sir, said I,
+        or Madam, truly your forgiveness I implore.  But the fact is I
+        was napping, and so gently you came rapping, And so faintly
+        you came tapping, tapping at my chamber door.  That I scarce
+        was sure I heard you, here I opened wide the door.  Darkness
+        there, and nothing more.  Deep into that darkness peering,
+        long I stood there wondering, fearing.  Doubting, dreaming
+        dreams no mortal ever dared to dream before; But the silence
+        was unbroken, and the darkness gave no token.  And the only
+        word there spoken was the whispered word, Lenore!  This I
+        whispered, and an echo murmured back the word, Lenore!  Merely
+        this, and nothing more."""
 
     i += 1
     if source in ['strandberg', 'foo'] or idx == i:
@@ -175,33 +210,102 @@ Merely this, and nothing more."""
         # Foo Bar Baz, by Per Erik Strandberg, 2014
         return """Foo. Foo hoo? Foo bar. Foo bar, baz. Baz? Foo bar, baz."""
 
-    return """Asset csystems BATF Blowpipe Soviet South Africa wire transfer.
-NSA event security Compsec spies benelux Sears Tower airframe red noise.
+    i += 1
+    if source in ['bible', 'genesis'] or idx == i:
+        # https://en.wikisource.org/wiki/Bible_%28Wikisource%29/Genesis
+        # Genesis, by Moses (yeah, right!), 6th and 5th centuries BCE
+        return """At first, God created the sky, and the Earth. And
+        the Earth was helter-skelter, and darkness upon the abyss,
+        God's spirit drifting upon the surface of the water. And God
+        said, Light will be, and light was. And God saw this light was
+        good, and God separated the light from the darkness. And God
+        called the light day, and called the darkness night; and it
+        was evening, and it was morning, day one. And God said, A dome
+        will be inside the waters, and it will make a divide between
+        water and water. And God made the dome, and divided the water
+        which was under the dome from the water which was above the
+        dome; and it was so. And God called the dome sky. And it was
+        evening and it was morning, day two. And God said, the waters
+        below the sky will drain to one place, and the dry land will
+        show; and it was so. And God called the dry land land, and the
+        pool of water he called seas. And God saw it was good. And God
+        said, engrassed will be the Earth with grass plants sowing
+        seeds, fruit trees making fruit of its kind, with its seed
+        inside, on the Earth, and it was so. And the land sprouted
+        seeded grasses, plants sowing seeds, of their kind, and trees
+        making fruit with their seed inside; and God saw it was
+        good. And it was evening and it was morning, day three. And
+        God said, there will be lights in the dome of the sky, to
+        distinguish between the night and the day; and they will be
+        for signs and for seasons, for days, and years. And it was for
+        the lights in the dome of the sky to light up the Earth, and
+        it was so. And God made, the two great lights: the big light,
+        to govern the day, and the small light to govern the night,
+        and the stars. And God gave them, in the dome of the sky, to
+        light up the Earth. And to govern, the day and night, and to
+        separate between the light and the darkness; and God saw that
+        it was good. And it was evening, and it was morning, day
+        four. And God said, the waters will infest with forms of
+        living spirit, and fowl will fly above the land, on the
+        surface of the dome of the sky., And God created the big
+        crocodiles, and all the living beings that roam, which teemed
+        the water with their own kind, and every bird of a feather to
+        its kind, and God saw that it was good. And God blessed them,
+        saying: Bear fruit and multiply, and fill the water in the
+        seas and the bird, will multiply on the land. And it was
+        evening and it was morning, day five. And God said, out of
+        the land will come out living beings of their kind, beasts and
+        crawlers, and land animals, to their kind; And it was so. And
+        God made the land animal into its kind, and the beast to its
+        own kind, and the crawler of the land to its own kind; and God
+        saw that it was good. And God said, we will make man in our
+        image, in our likeness. And they will oversee the fish of the
+        sea and the bird in the sky, and the beast, and all the Earth,
+        and all the crawlers that crawl upon the Earth. And God
+        created the man in his image, in the image of God created him:
+        male and female, created them. And God blessed them, and God
+        told them bear fruit and multiply and fill up the Earth, and
+        conquer it, and oversee the fish in the sea, and the bird in
+        the sky, and every animal which crawls upon the Earth."""
 
-Commecen Steve Case SCUD missile Kosovo quarter bce Bellcore SAPO.
-Asset IRA TWA rail gun CDMA embassy USCODE.
-
-Bin Laden analyzer S Key ASIO espionage South Africa Ermes ASDIC NASA.
-MP5K-SD Etacs plutonium Putin Tony Blair corporate security.
-
-Telex ANDVT MD5 kilderkin Comirex strategic AIMSX Hugo Chavez Rubin.
-Medco PGP asset EuroFed Area 51 64 Vauxhall Cross.
-
-Yukon Gazprom Crypto AG quiche secure COSCO Belknap Elvis MD5 Kh-11.
-MD2 PGP Nazi Abu Ghraib Lon Horiuchi.
-
-Crowell Treasury pink noise strategic LLNL airframe embassy MP5K-SD.
-Mafia Forte e-bomb quarter Dateline kibo Janet Reno.
-
-Reno Bellcore kibo AVN NATO counter terrorism Downing Street Kennedy.
-ANZUS Merlin Dick Cheney Janet Reno doctrine Albanian AFSPC.
-
-David John Oates event security csim Ft. Knox Forte crypto anarchy spy.
-Nuclear PLO basement MILSATCOM genetic 9/11 PET Crypto AG.
-
-Freeh Bellcore unclassified. Hello to all my friends and fans in
-domestic surveillance. Saudi Arabia Panama secure EuroFed MP5K-SD Bush.
-Wired Marxist pre-emptive FBI Europol embassy."""
+    return """Asset csystems BATF Blowpipe Soviet South Africa wire
+    transfer. NSA event security Compsec spies benelux Sears Tower
+    airframe red noise. Commecen Steve Case SCUD missile Kosovo
+    quarter bce Bellcore SAPO. Asset IRA TWA rail gun CDMA embassy
+    USCODE. Bin Laden analyzer S Key ASIO espionage South Africa
+    Ermes ASDIC NASA. MP5K-SD Etacs plutonium Putin Tony Blair
+    corporate security. Telex ANDVT MD5 kilderkin Comirex strategic
+    AIMSX Hugo Chavez Rubin. Medco PGP asset EuroFed Area 51 64
+    Vauxhall Cross. Yukon Gazprom Crypto AG quiche secure COSCO
+    Belknap Elvis MD5 Kh-11. MD2 PGP Nazi Abu Ghraib Lon Horiuchi.
+    Crowell Treasury pink noise strategic LLNL airframe embassy
+    MP5K-SD. Mafia Forte e-bomb quarter Dateline kibo Janet Reno.
+    Reno Bellcore kibo AVN NATO counter terrorism Downing Street
+    Kennedy. ANZUS Merlin Dick Cheney Janet Reno doctrine Albanian
+    AFSPC. David John Oates event security csim Ft. Knox Forte crypto
+    anarchy spy. Nuclear PLO basement MILSATCOM genetic 9/11 PET
+    Crypto AG. Freeh Bellcore unclassified. Hello to all my friends
+    and fans in domestic surveillance. Saudi Arabia Panama secure
+    EuroFed MP5K-SD Bush. Wired Marxist pre-emptive FBI Europol
+    embassy. Heartbleed MD5 tempest offensive information warfare.
+    Bosnia NWO CIDA SAFE colonel dictionary Security Council Bruxelles.
+    ASLET Aldergrove pipeline 9/11 UMTS fundamentalist MD2 Etacs Agfa.
+    keyhole DES PGP fraud csystems Israel Islam Abduganievich Karimov.
+    ANZUS ARPA Bin Laden David John Oates analyzer keyhole FSF PLO.
+    Audiotel Capricorn satellite imagery fundamentalist DRM FBI.
+    broadside MD2 covert video Firewalls Telex munitions John Kerry.
+    SRI Abu Ghraib Glock BRLO MP5K-SD SEAL Team 6 Janet Reno event.
+    security Mole digicash Sears Tower Reno 9/11 Crypto AG nitrate.
+    radar computer terrorism doctrine United Nations ASPIC colonel
+    22nd. SAS supercomputer espionage passwd Waco, Texas kibo Fedayeen.
+    Mahmoud Ahmadinejad supercomputer Bush Wired eternity server.
+    Guantanamo INS plutonium Semtex advisors. S Box Chobetsu MP5K-SD.
+    A csystems illuminati offensive information warfare cracking sniper.
+    Monarchist Agfa Al Jazeera. Mole ICE Al-Qaeda John Kerry JUWTF.
+    Number key AIMSX Taiwan. Plutonium 9/11 Gazprom Ruby Ridge benelux.
+    Corporate security clones cybercash Etacs computer terrorism.
+    Number key cryptographic industrial espionage SSL subversive
+    Bernadotte fundamentalist. Let's talk about roses."""
 
 
 def parse_args(arguments=None):
@@ -252,10 +356,14 @@ def parse_args(arguments=None):
                         help='"Asset csystems BATF Blowpipe Soviet..."')
     qgroup.add_argument('--poe', '--raven', dest='source',
                         action='store_const', const='raven',
-                        help='"Once upon a midnight dreary, while I pondered, weak and weary,..."')
+                        help='"Once upon a midnight dreary, while I pondered' +
+                        ', weak and weary,..."')
     qgroup.add_argument('--strandberg', '--foo', dest='source',
                         action='store_const', const='strandberg',
                         help='"Foo. Foo hoo? Foo bar. Foo bar, baz..."')
+    qgroup.add_argument('--bible', '--genesis', dest='source',
+                        action='store_const', const='bible',
+                        help='"At first, God created the sky, and..."')
     qgroup.add_argument('-q', '--quote', action='store', type=int, metavar='Q',
                         help='select source by index instead, q = 1, 2, ...')
 
@@ -393,6 +501,9 @@ def get_chars(lorem, n):
 def do_lorem(opt):
     """Get the lorem and apply the arguments"""
     lorem = get_quote(opt.source)
+    for spaces in ['    ', '    ', '  ', '  ']:
+        lorem = lorem.replace(spaces, ' ')
+
     if opt.randomize:
         lorem = randomize(lorem)
 
