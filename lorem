@@ -37,6 +37,7 @@ Download and read more at
 
 from argparse import ArgumentParser
 from random import shuffle, choice
+from textwrap import fill
 
 SHORTNAME = "lorem"
 PROGRAM = "Lorem Ipsum Generator (%s)" % SHORTNAME
@@ -126,12 +127,12 @@ def get_quote(source=None, idx=None):
         return """Lorsque, par un décret des puissances suprêmes, Le
         Poète apparaît en ce monde ennuyé, Sa mère épouvantée et
         pleine de blasphèmes Crispe ses poings vers Dieu qui la prend
-        en pitié.  —Ah! Que n’ai-je mis bas tout un nœud de vipères,
-        Plutôt que de nourrir cette dérision!  Maudite soit la nuit
+        en pitié. Ah! Que n' ai je mis bas tout un nœud de vipères,
+        Plutôt que de nourrir cette dérision! Maudite soit la nuit
         aux plaisirs éphémères Où mon ventre a conçu mon expiation!
         Puisque tu m’as choisie entre toutes les femmes Pour être le
-        dégoût de mon triste mari.  Et que je ne puis pas rejeter dans
-        les flammes, Comme un billet d’amour, ce monstre rabougri.  Je
+        dégoût de mon triste mari. Et que je ne puis pas rejeter dans
+        les flammes, Comme un billet d’amour, ce monstre rabougri. Je
         ferai rejaillir ta haine qui m’accable Sur l’instrument maudit
         de tes méchancetés, Et je tordrai si bien cet arbre misérable
         Qu’il ne pourra pousser ses boutons empestés!"""
@@ -142,7 +143,7 @@ def get_quote(source=None, idx=None):
         # Hemsöborna by August Strindberg, 1914
         return """Han kom som ett yrväder en aprilafton och hade ett
         höganäskrus i en svångrem om halsen. Clara och Lotten voro
-        inne med sköt-ekan att hämta honom på Dalarö brygga; men det
+        inne med skötekan att hämta honom på Dalarö brygga; men det
         dröjde evigheter, innan de kommo i båt. De skulle till
         handelsman och ha en tunna tjära och på abeteket och hämta
         gråsalva åt grisen, och så skulle de på posten och få ett
@@ -154,8 +155,8 @@ def get_quote(source=None, idx=None):
         en råseglare förr, och därför skrek han, att de skulle hissa
         focken, som inte fanns. Och på tullbryggan stodo lotsar och
         vaktmästare och grinade åt manövern, när ekan gick över stag
-        och länsade ner åt Saltsäcken. -Hörru, du har hål i båten!
-        skrek en lotslärling genom vinden; - stopp till! stopp till!
+        och länsade ner åt Saltsäcken. Hörru, du har hål i båten!
+        skrek en lotslärling genom vinden; Stopp till! stopp till!
         och medan Carlsson tittade efter hålen, hade Clara knuffat
         undan honom och tagit roret, och med årorna lyckades Lotten få
         ekan opp i vinden igen, så att nu strök det ner åt Aspösund
@@ -166,7 +167,7 @@ def get_quote(source=None, idx=None):
         och kreatur, som ingen annan ville ta befattning med, sedan
         gubben Flod gått ur livet och änkan satt ensam vid gården. Men
         när Carlsson nu ville börja pumpa flickorna om ställningar och
-        förhållanden, så fick han riktiga skärkarlssvar. -Ja si, det
+        förhållanden, så fick han riktiga skärkarlssvar. Ja si, det
         vet jag inte! Ja si, det kan jag inte säga! Ja si, det vet jag
         rakt inte."""
 
@@ -215,7 +216,7 @@ def get_quote(source=None, idx=None):
         # https://en.wikisource.org/wiki/Bible_%28Wikisource%29/Genesis
         # Genesis, by Moses (yeah, right!), 6th and 5th centuries BCE
         return """At first, God created the sky, and the Earth. And
-        the Earth was helter-skelter, and darkness upon the abyss,
+        the Earth was helter skelter, and darkness upon the abyss,
         God's spirit drifting upon the surface of the water. And God
         said, Light will be, and light was. And God saw this light was
         good, and God separated the light from the darkness. And God
@@ -273,20 +274,20 @@ def get_quote(source=None, idx=None):
     airframe red noise. Commecen Steve Case SCUD missile Kosovo
     quarter bce Bellcore SAPO. Asset IRA TWA rail gun CDMA embassy
     USCODE. Bin Laden analyzer S Key ASIO espionage South Africa
-    Ermes ASDIC NASA. MP5K-SD Etacs plutonium Putin Tony Blair
+    Ermes ASDIC NASA. MP5KSD Etacs plutonium Putin Tony Blair
     corporate security. Telex ANDVT MD5 kilderkin Comirex strategic
     AIMSX Hugo Chavez Rubin. Medco PGP asset EuroFed Area 51 64
     Vauxhall Cross. Yukon Gazprom Crypto AG quiche secure COSCO
-    Belknap Elvis MD5 Kh-11. MD2 PGP Nazi Abu Ghraib Lon Horiuchi.
+    Belknap Elvis MD5 KH11. MD2 PGP Nazi Abu Ghraib Lon Horiuchi.
     Crowell Treasury pink noise strategic LLNL airframe embassy
-    MP5K-SD. Mafia Forte e-bomb quarter Dateline kibo Janet Reno.
+    AK47. Mafia Forte ebomb quarter Dateline kibo Janet Reno.
     Reno Bellcore kibo AVN NATO counter terrorism Downing Street
     Kennedy. ANZUS Merlin Dick Cheney Janet Reno doctrine Albanian
     AFSPC. David John Oates event security csim Ft. Knox Forte crypto
     anarchy spy. Nuclear PLO basement MILSATCOM genetic 9/11 PET
     Crypto AG. Freeh Bellcore unclassified. Hello to all my friends
     and fans in domestic surveillance. Saudi Arabia Panama secure
-    EuroFed MP5K-SD Bush. Wired Marxist pre-emptive FBI Europol
+    EuroFed Glock17 Bush. Wired Marxist preemptive FBI Europol
     embassy. Heartbleed MD5 tempest offensive information warfare.
     Bosnia NWO CIDA SAFE colonel dictionary Security Council Bruxelles.
     ASLET Aldergrove pipeline 9/11 UMTS fundamentalist MD2 Etacs Agfa.
@@ -294,18 +295,18 @@ def get_quote(source=None, idx=None):
     ANZUS ARPA Bin Laden David John Oates analyzer keyhole FSF PLO.
     Audiotel Capricorn satellite imagery fundamentalist DRM FBI.
     broadside MD2 covert video Firewalls Telex munitions John Kerry.
-    SRI Abu Ghraib Glock BRLO MP5K-SD SEAL Team 6 Janet Reno event.
+    SRI Abu Ghraib Glock BRLO STANAG SEAL Team 6 Janet Reno event.
     security Mole digicash Sears Tower Reno 9/11 Crypto AG nitrate.
     radar computer terrorism doctrine United Nations ASPIC colonel
     22nd. SAS supercomputer espionage passwd Waco, Texas kibo Fedayeen.
     Mahmoud Ahmadinejad supercomputer Bush Wired eternity server.
-    Guantanamo INS plutonium Semtex advisors. S Box Chobetsu MP5K-SD.
+    Guantanamo INS plutonium Semtex advisors. S Box Chobetsu 556.
     A csystems illuminati offensive information warfare cracking sniper.
-    Monarchist Agfa Al Jazeera. Mole ICE Al-Qaeda John Kerry JUWTF.
+    Monarchist Agfa Al Jazeera. Mole ICE AlQaeda John Kerry JUWTF.
     Number key AIMSX Taiwan. Plutonium 9/11 Gazprom Ruby Ridge benelux.
     Corporate security clones cybercash Etacs computer terrorism.
     Number key cryptographic industrial espionage SSL subversive
-    Bernadotte fundamentalist. Let's talk about roses."""
+    Bernadotte fundamentalist. Hollow point. Let's talk about roses."""
 
 
 def parse_args(arguments=None):
@@ -324,6 +325,8 @@ def parse_args(arguments=None):
                         const=vinfo)
     parser.add_argument('-t', action='store_true',
                         help='run self-tests and exit')
+    parser.add_argument('--cols', action='store', type=int, metavar='COLS',
+                        default=80, help='override line width - default 80')
 
     ogroup = parser.add_argument_group('output format (mutually exclusive)')
     ogroup.add_argument('--words', '-n', action='store', type=int, metavar='N',
@@ -501,11 +504,14 @@ def get_chars(lorem, n):
 def do_lorem(opt):
     """Get the lorem and apply the arguments"""
     lorem = get_quote(opt.source)
-    for spaces in ['    ', '    ', '  ', '  ']:
+
+    for spaces in ['\n', '    ', '    ', '  ', '  ']:
         lorem = lorem.replace(spaces, ' ')
 
     if opt.randomize:
         lorem = randomize(lorem)
+
+    lorem = fill(lorem, width=opt.cols)
 
     if opt.sentences is not None:
         lorem = get_sentences(lorem, opt.sentences)
@@ -515,6 +521,9 @@ def do_lorem(opt):
         lorem = get_words(lorem, opt.words)
     elif opt.lines is not None:
         lorem = get_lines(lorem, opt.lines)
+
+    if opt.lines is None and opt.chars is None:
+        lorem = fill(lorem, width=opt.cols)
 
     return do_case(lorem, opt.case)
 

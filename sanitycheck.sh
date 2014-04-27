@@ -47,11 +47,11 @@ else
 fi
 testcases=$((testcases+1))
 
-for random in "" "--randomize"
+for random in "" "--randomize" "--cols 20" "--cols 160 --randomize"
 do
     for lorem in lorem decameron faust fleurs spook strindberg foo genesis
     do
-        for n in 0 1 2 3 100 100000
+        for n in 0 1 10 10000
         do
             action="lorem --$lorem -n $n $random"
             if [ `$action | wc -w` -ne $n ]
@@ -64,7 +64,7 @@ do
             testcases=$((testcases+1))
 
             action="lorem --$lorem -s $n $random"
-            if [ `$action | tr ";.\!?" "\n\n\n" | wc -l` -ne $((n+1)) ]
+            if [ `$action | tr "\n" " " | tr ";.\!?" "\n\n\n\n" | wc -l` -ne $n ]
             then
                 echo BROKEN: $action
                 broken=$((broken+1))
