@@ -41,7 +41,7 @@ from textwrap import fill
 
 SHORTNAME = "lorem"
 PROGRAM = "Lorem Ipsum Generator (%s)" % SHORTNAME
-VERSION = "0.7.3"
+VERSION = "0.7.4"
 COPYR = "Copyright (C) 2014 Per Erik Strandberg"
 GPLV3 = """This is free software, and you are welcome to redistribute it
 under the GNU General Public License 3+ <http://www.gnu.org/licenses/gpl.html>
