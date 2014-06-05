@@ -6,7 +6,7 @@ lorem
 By default it just outputs the typical stuff you would expect from a lorem ipsum generator:
 
     $ lorem
-    lorem ipsum dolor sit amet
+    Lorem ipsum dolor sit amet,
 
 
 But you can specify the number of words you want
@@ -15,77 +15,90 @@ But you can specify the number of words you want
     lorem ipsum
 
 
-Or the origin of the quote (12 is Strindberg).
+Or the origin of the quote (4 is Strindberg).
 
-    $ lorem -n 7 -q 12
+    $ lorem -n 7 -q 4
     han kom som ett yrväder en aprilafton
 
 
 If you prefer the to specify the number of characters then go ahead and do so:
 
-    $ lorem -c 79 -q 11
-    me quedo con el transparente hombrecillo que come los huevos de la golondrina m
-
+    $ lorem -c79 -q 7
+    At first, God created the sky, and the Earth. And the Earth was helter skelter,
 
 But beware of the new line character at the end:
 
-    $ lorem -c 79 -q 11 | wc -c
+    $ lorem -c79 -q 7 | wc -c
     80
 
-    $ lorem -c 79 -q 11 | hd | tail -n 2
-    00000040  6c 61 20 67 6f 6c 6f 6e  64 72 69 6e 61 20 6d 0a  |la golondrina m.|
+    $ lorem -c79 -q 7 | hd | tail -n 2
+    00000040  68 65 6c 74 65 72 20 73  6b 65 6c 74 65 72 2c 0a  |helter skelter,.|
     00000050
 
 
 If the number of lines is more your style then use lines instead.
-(Source 13 is from emacs spook).
 
-    $ lorem -l 7 -q 13
-    kubark cryptographic secure aiews hackers panama genetic communist
-    blu114b illuminati fbi arnett defcon commecen ceridian allah
-    gamma rs9512c sdi passwd emc safe morse eternity server terrorist
-    defcon enforcers uscoi crypto anarchy waco texas autodin blue book
-    $400 million in gold bullion ron brown csystems cida cypherpunk 64
-    vauxhall cross asset key dateline cncis cdc norad domestic
-    disruption cryptanalysis ermes
+    $ lorem -l 3 --spook
+    Asset csystems BATF Blowpipe Soviet South Africa wire transfer. NSA event
+    security Compsec spies benelux Sears Tower airframe red noise. Commecen Steve
+    Case SCUD missile Kosovo quarter bce Bellcore SAPO. Asset IRA TWA rail gun CDMA
 
+
+The lorems can also be randomized, and the case changed.
+
+    $ lorem --bible -s 1 --randomize
+    Earth bird, God the there from darkness the oversee and so?
+
+    $ lorem --strandberg --upper -n 3
+    FOO. FOO HOO?
+
+    $ lorem --poe --lower -n 11
+    once upon a midnight dreary, while i pondered, weak and weary.
+
+    $ lorem --poe --lower -n 11 --randomize
+    i there is purple nothing forgiveness darkness separate sorrow—sorrow word
+    lenore.
 
 The help
 
     $ lorem -h
-    Usage:    lorem [-n|-l|-c] N [-q M]?
-              where
-              N and M are integers
+    usage: lorem [-h] [-v] [-t] [--cols COLS] [--words N] [--sentences S]
+                 [--lines L] [--chars C] [--lorem] [--decamerone] [--faust]
+                 [--fleurs] [--strindberg] [--spook] [--poe] [--strandberg]
+                 [--bible] [-q Q] [--lower] [--upper] [--randomize]
 
-    Note:     If -n -l and/or -c are combined -l has priority over -c that has
-              priority over -n.
+    lorem - Create more or less random lorem ipsum text.
 
-              By default "-n 5" is activated.
+    optional arguments:
+      -h, --help            show this help message and exit
+      -v, --version         show program's version number and exit
+      -t                    run self-tests and exit
+      --cols COLS           override line width - default 80
 
-    Examples: lorem -n 10
-              Get 10 words of lorem.
+    output format (mutually exclusive):
+      --words N, -n N       number of words
+      --sentences S, -s S   number of sentences
+      --lines L, -l L       number of lines
+      --chars C, -c C       number of characters (excl. final newline)
 
-              lorem -l 5
-              Get 5 lines of lorem
+    qoute selection:
+      --lorem, --cicero     "Lorem ipsum dolor sit amet..."
+      --decamerone, --boccaccio
+                            "Ser Cepperello con una falsa confessione..."
+      --faust, --goethe     "Ihr naht euch wieder..."
+      --fleurs, --beaudelaire
+                            "Lorsque, par un décret..."
+      --strindberg, --hemsöborna
+                            "Han kom som ett yrväder en aprilafton..."
+      --spook, --emacs      "Asset csystems BATF Blowpipe Soviet..."
+      --poe, --raven        "Once upon a midnight dreary, while I pondered, weak
+                            and weary,..."
+      --strandberg, --foo   "Foo. Foo hoo? Foo bar. Foo bar, baz..."
+      --bible, --genesis    "At first, God created the sky, and..."
+      -q Q, --quote Q       select source by index instead, q = 1, 2, ...
 
-              lorem -c 79
-              Get 79 characters of lorem
-
-              lorem -l 5 -q 11
-              Get 5 lines of lorem from quote 11
-
-    License:  Copyright (C) 2007 Per Erik Strandberg
-              This program comes with ABSOLUTELY NO WARRANTY.
-
-              This is free software, and you are welcome to redistribute it
-              under the GNU GENERAL PUBLIC LICENSE Version 3.
-
-
-    Options:
-      --version   show program's version number and exit
-      -h, --help  show this help message and exit
-      -n N        Number of Words
-      -l L        Number of Lines
-      -c C        Number of Chars
-      -q Q        Quote index (0+)
+    options for sentences:
+      --lower               all lower case (default false)
+      --upper               all upper case (default false)
+      --randomize           randomize order (default false)
 

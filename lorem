@@ -503,7 +503,12 @@ def get_chars(lorem, n):
 
 def do_lorem(opt):
     """Get the lorem and apply the arguments"""
-    lorem = get_quote(opt.source)
+
+    if opt.quote:
+        lorem = get_quote(idx = opt.quote)
+    else:
+        lorem = get_quote(opt.source)
+
 
     for spaces in ['\n', '    ', '    ', '  ', '  ']:
         lorem = lorem.replace(spaces, ' ')
