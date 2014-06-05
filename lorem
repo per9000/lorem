@@ -269,6 +269,8 @@ def get_quote(source=None, idx=None):
         conquer it, and oversee the fish in the sea, and the bird in
         the sky, and every animal which crawls upon the Earth."""
 
+    # output from the emacs spook function
+    # http://www.gnu.org/software/emacs/manual/html_node/emacs/Mail-Amusements.html
     return """Asset csystems BATF Blowpipe Soviet South Africa wire
     transfer. NSA event security Compsec spies benelux Sears Tower
     airframe red noise. Commecen Steve Case SCUD missile Kosovo
