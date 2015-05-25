@@ -49,7 +49,8 @@ testcases=$((testcases+1))
 
 for random in "" "--randomize" "--cols 20" "--cols 160 --randomize"
 do
-    for lorem in lorem decameron faust fleurs spook strindberg foo genesis
+    for lorem in lorem decameron faust fleurs spook strindberg \
+	foo genesis walden
     do
         for n in 0 1 10 10000
         do
