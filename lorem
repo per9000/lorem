@@ -38,6 +38,7 @@ Download and read more at
 from argparse import ArgumentParser
 from random import shuffle, choice
 from textwrap import fill
+import sys
 
 SHORTNAME = "lorem"
 PROGRAM = "Lorem Ipsum Generator (%s)" % SHORTNAME
@@ -312,6 +313,10 @@ def get_quote(source=None, idx=None):
         if it be necessary eat but one; instead of a hundred dishes,
         five; and reduce other things in proportion."""
 
+    i += 1
+    if source in ['stdin'] or idx == i:
+        return sys.stdin.read()
+
     # output from the emacs spook function
     # http://www.gnu.org/software/emacs/manual/html_node/emacs/Mail-Amusements.html
     return """Asset csystems BATF Blowpipe Soviet South Africa wire
@@ -415,6 +420,9 @@ def parse_args(arguments=None):
     qgroup.add_argument('--walden', '--thoreau', dest='source',
                         action='store_const', const='walden',
                         help='"I went to the woods..."')
+    qgroup.add_argument('--stdin', dest='source',
+                        action='store_const', const='stdin',
+                        help='use stdin as the source text')
     qgroup.add_argument('-q', '--quote', action='store', type=int, metavar='Q',
                         help='select source by index instead, q = 1, 2, ...')
 
