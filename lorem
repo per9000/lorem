@@ -376,7 +376,7 @@ def parse_args(arguments=None):
     parser.add_argument('-t', action='store_true',
                         help='run self-tests and exit')
     parser.add_argument('--cols', action='store', type=int, metavar='COLS',
-                        help='override line width - default 80 (set to 0 for no line returns)')
+                        default=80, help='override line width - default 80 (set to 0 for no line returns)')
 
     ogroup = parser.add_argument_group('output format (mutually exclusive)')
     ogroup.add_argument('--words', '-n', action='store', type=int, metavar='N',
