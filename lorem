@@ -376,7 +376,7 @@ def parse_args(arguments=None):
     parser.add_argument('-t', action='store_true',
                         help='run self-tests and exit')
     parser.add_argument('--cols', action='store', type=int, metavar='COLS',
-                        default=80, help='override line width - default 80')
+                        help='override line width - default 80 (set to 0 for no line returns)')
 
     ogroup = parser.add_argument_group('output format (mutually exclusive)')
     ogroup.add_argument('--words', '-n', action='store', type=int, metavar='N',
@@ -571,7 +571,11 @@ def do_lorem(opt):
     if opt.randomize:
         lorem = randomize(lorem)
 
-    lorem = fill(lorem, width=opt.cols)
+    if opt.cols == 0:
+        lorem = fill(lorem, width=80)
+        lorem = no_linebreaks(lorem)
+    else:
+        lorem = fill(lorem, width=opt.cols)
 
     if opt.sentences is not None:
         lorem = get_sentences(lorem, opt.sentences)
@@ -583,7 +587,11 @@ def do_lorem(opt):
         lorem = get_lines(lorem, opt.lines)
 
     if opt.lines is None and opt.chars is None:
-        lorem = fill(lorem, width=opt.cols)
+        if opt.cols == 0:
+            lorem = fill(lorem, width=80)
+            lorem = no_linebreaks(lorem)
+        else: 
+            lorem = fill(lorem, width=opt.cols)
 
     return do_case(lorem, opt.case)
 
