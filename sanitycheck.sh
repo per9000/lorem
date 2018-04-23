@@ -47,6 +47,16 @@ else
 fi
 testcases=$((testcases+1))
 
+action="lorem --cols 0 --words 16"
+if [ "`$action`" == *"\n"* ]
+then
+    echo BROKEN: $action
+    broken=$((broken+1))
+else
+    echo OK: $action
+fi
+testcases=$((testcases+1))
+
 for random in "" "--randomize" "--cols 20" "--cols 160 --randomize"
 do
     for lorem in lorem decameron faust fleurs spook strindberg \
