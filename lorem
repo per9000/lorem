@@ -42,7 +42,7 @@ import sys
 
 SHORTNAME = "lorem"
 PROGRAM = "Lorem Ipsum Generator (%s)" % SHORTNAME
-VERSION = "0.7.4"
+VERSION = "0.8.0"
 COPYR = "Copyright (C) 2014 Per Erik Strandberg"
 GPLV3 = """This is free software, and you are welcome to redistribute it
 under the GNU General Public License 3+ <http://www.gnu.org/licenses/gpl.html>
@@ -590,7 +590,7 @@ def do_lorem(opt):
         if opt.cols == 0:
             lorem = fill(lorem, width=80)
             lorem = no_linebreaks(lorem)
-        else: 
+        else:
             lorem = fill(lorem, width=opt.cols)
 
     return do_case(lorem, opt.case)
