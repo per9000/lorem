@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """
@@ -601,8 +601,8 @@ if __name__ == '__main__':
     if my_args.t:
         import doctest
         res = doctest.testmod()
-        print "Tested %s cases, %s failed." % (res.attempted, res.failed)
+        print("Tested %s cases, %s failed." % (res.attempted, res.failed))
     elif my_args.version:
-        print my_args.version
+        print(my_args.version)
     else:
-        print do_lorem(my_args)
+        print(do_lorem(my_args))
