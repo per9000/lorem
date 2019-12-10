@@ -1,5 +1,6 @@
 lorem
 =====
+[![Run on Repl.it](https://repl.it/badge/github/per9000/lorem)](https://repl.it/github/per9000/lorem)
 
 `lorem` is a python lorem ipsum generator for the console.
 
