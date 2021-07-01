@@ -81,7 +81,7 @@ The help
       --lines L, -l L       number of lines
       --chars C, -c C       number of characters (excl. final newline)
 
-    qoute selection:
+    quote selection:
       --lorem, --cicero     "Lorem ipsum dolor sit amet..."
       --decamerone, --boccaccio
                             "Ser Cepperello con una falsa confessione..."
