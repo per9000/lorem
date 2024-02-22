@@ -388,7 +388,7 @@ def parse_args(arguments=None):
     ogroup.add_argument('--chars', '-c', action='store', type=int, metavar='C',
                         help='number of characters (excl. final newline)')
 
-    qgroup = parser.add_argument_group('qoute selection')
+    qgroup = parser.add_argument_group('quote selection')
     qgroup.add_argument('--lorem', '--cicero', action='store_const',
                         const='lorem', dest='source', default='lorem',
                         help='"Lorem ipsum dolor sit amet..."')
