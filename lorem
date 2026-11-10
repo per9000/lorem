@@ -461,10 +461,17 @@ def check_args(parser, opt):
 
 
 def randomize(lorem):
-    """Randomize the order of the lorem."""
+    """Randomize the order of the lorem.
+
+    Empty input is returned unchanged instead of crashing:
+
+        >>> randomize('')
+        ''
+    """
     words = lorem.split(' ')
     shuffle(words)
-    words[0] = words[0][0].upper() + words[0][1:]
+    if words[0]:
+        words[0] = words[0][0].upper() + words[0][1:]
     return ' '.join(words)
 
 
